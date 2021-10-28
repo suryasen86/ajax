@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+      $(function () {
+        $('form').bind('submit', function (event) {
+        // using this page stop being refreshing 
+        event.preventDefault();
+
+          $.ajax({
+            type: 'POST',
+            url: 'post.php',
+            data: $('form').serialize(),
+            success: function () {
+              alert('form was submitted');
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      <input name="time"><br>
+      <input name="date"><br>
+      <input name="submit" type="submit" value="Submit">
+    </form
+
+  </body>
+</html>
